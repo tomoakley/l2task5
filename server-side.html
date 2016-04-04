@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Level 2 group project - Server Side</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="https://use.typekit.net/eye4hys.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  </head>
+
+  <body>
+    <header class="clearfix site-header">
+      <div class="l-constrained">
+        <h1 class="site-logo">
+          <a href="index.html">
+            <img src="assets/images/plaqueit-logo.png" alt="PlaqueIt" />
+          </a>
+        </h1>
+        <ul class="site-navigation clearfix">
+          <li class="active"><a href="server-side.html">Server Side</a></li>
+          <li><a href="data.html">Data</a></li>
+          <li><a href="technical-report.html">Technical Report</a></li>
+          <li><a href="appendix.html">Appendix</a></li>
+        </ul>
+      </div>
+    </header>
+    <div class="content l-constrained">
+
+      <p>I developed all of my own server side code myself; as I said in the <a href="technical-report.html">Technical Repot</a>, I did all the code on this project myself as I knew more of what I was doing than my other group members.</p>
+      <p>My MySQL database has two tables - Users and favouritePlaques. Users holds the user data and favouritePlaques holds the user ID and plaque IDs of all the plaques each user has favourited. More details can be found in the <a href="data.html">Data</a> page and the <a href="technical-report.html">Technical Repot</a>. Here is the SQL code used to create each table:
+      <ul class="media-list">
+        <li>
+          <img src="assets/images/code/users-sql.png" alt="User Table SQL" class="media-img" />
+          <p class="media-content">Currently it only holds a few columns - email, name, points and the time they registered, plus a unique ID. There isn't a password column yet as I decided there wasn't much point creating a password when it wasn't encrypted, instead just being a plaintext field. I already had one of them for email so decided it wasn't worth it until I had time and knowledge to do the encryption. However, PlaqueIt does ask for a password on Login, but it can be anything (as long as it's not blank) and the app will accept it.</p>
+        </li>
+        <li>
+          <img src="assets/images/code/favouritePlaques-sql.png" alt="User Table SQL" class="media-img" />
+          <p class="media-content">This holds the user ID and the plaque ID of each favourited plaque - therefore it can hold duplicates of each, but not the same combination; a Unique Key exists to make sure this cannot happen. The user ID should also be a foreign key to the ID in the users table but because it is a Unique Key already, I don't think MySQL allows it to be two.</p>
+        </li>
+      </ul>
+      <p>All of the code inside the <code>tom</code> directory on the server (<code>~/Jetty/src/ubiserv/simple/tom</code>) is mine. There are quite a lot of files, and a lot of them are similar (User.java and Plaque.java both extend the <code>HttpServlet</code> class and so are relatively similar) so I won't show them all (the code is available on <a href="https://github.com/tomoakley/android-connection-servlet">Github</a>, however). There is a seperate class for the database connection and a Constants.java class listing the server details (however, because I put this on Github and made the repo public, I didn't think it would be a good idea to make the login details public so stored them in a seperate file which isn't sent to Github). Here is an outline of the most interesting Java code which controls the backend:</p>
+      <ul class="media-list">
+        <li>
+          <img src="assets/images/code/user-servlet.png" alt="User Servlet" class="media-img" />
+          <p class="media-content">This is the user servlet; it has a few actions (specified by a query parameter) which is sent to a switch statement and handles sending to another more specific method. These actions all take different parameters so are defined individually, however, some are duplicated so this implementation could definetley be improved. All of the methods return a JSON object, and below what you see here, this returned JSON object is printed out for Android or whatever platform to read and parse.</p>
+        </li>
+        <li>
+          <img src="assets/images/code/dologin.png" alt="User Login" class="media-img" />
+          <p class="media-content">After the switch statement in the <code>doGet</code> method, it is directed to here (if the action is to login). It goes off to check the email/password combination and if it returns a user ID which isn't 0 (false) then it means it has been successful. The user ID goes into a JSON object and is returned. The ID is then used in Android to create a Session for that user so they remain logged in whenever they use the app.</p>
+        </li>
+        <li>
+          <img src="assets/images/code/dbconnection.png" alt="Database Connection" class="media-img" />
+          <p class="media-content">This is a simple class which connects to the database. I have created a Constructor for this because it makes it far more modifiable and reusable. The class or method wanting to connect to the database can call this method, specify the connection details (coming from Constants.java right now) and then it's connected.</p>
+        </li>
+        <li>
+          <img src="assets/images/code/check-email.png" alt="Check Login Email" class="media-img" />
+          <p class="media-content">This method checks the entered email when the user logs in. It creates a database connection, executes the SELECT query and then loops over the results. There should only be 1 result, because the email is checked for uniqueness in the registration code, however, maybe my code here should also check only 1 row has been returned. If a record is returned, the method returns true, otherwise false.</p>
+        </li>
+        <li>
+          <img src="assets/images/code/get-details.png" alt="Get User Details" class="media-img" /> 
+          <p class="media-content">This method returns the user details which the request asks for. The request can contain any number of details in the request, using the <code>param</code> query parameter - this is then converted to a String array and can be looped over. The parameter string from the loop is entered into a SQL statement and the returned data is put back into a HashMap called <code>details</code> and sent back to the servlet to convert to JSON.</p>
+        </li>
+        <li>
+          <img src="assets/images/code/favourite.png" alt="Plaque Favourite" class="media-img" />
+          <p class="media-content">This code enters a new favourite record (or removes one) into the database. There is a Unique Key record on the <code>plaqueID</code> and </code>userID</code> which means that MySQL will automatically check before entering them that the combination of those two are unique, which is great as it doesn't have to be done manually. It then checks if a row was affected (inserted or deleted) and then returns a boolean based on the result.</p>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

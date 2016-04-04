@@ -1,0 +1,72 @@
+{
+  "website": {
+    "1": {
+      "initials": "",
+      "lastName": "Electronic Frontier Foundation",
+      "title": "Oracle vs. Google",
+      "url": "https://www.eff.org/cases/oracle-v-google",
+      "accessed": "1 April 2016",
+      "published": "9 October 2015",
+      "year": 2015
+    },
+    "2": {
+      "initials": "",
+      "lastName": "Google, Inc.",
+      "title": "Android Activities",
+      "url": "https://developer.android.com/guide/components/activities.html",
+      "accessed": "1 April 2016",
+      "published": "",
+      "year": "no date"
+    }, "5": {
+      "initials": "P.",
+      "lastName": "Dybka",
+      "title": "ERD Notations in data modeling. Part 2 – Chen notation",
+      "url": "http://www.vertabelo.com/blog/technical-articles/chen-erd-notation",
+      "accessed": "2 April 2016",
+      "published": "2 August 2014",
+      "year": 2014
+    }, "6": {
+      "initials": "G.",
+      "lastName": "Sparks",
+      "title": "Database modeling in UML (unified modeling language)",
+      "url": "http://www.methodsandtools.com/archive/archive.php?id=9",
+      "accessed": "2 April 2016",
+      "published": "",
+      "year": 1995
+    }, "7": {
+      "initials": "R.",
+      "lastName": "Heywood",
+      "title": "UML use case diagrams: tips",
+      "url": "http://www.andrew.cmu.edu/course/90-754/umlucdfaq.html",
+      "accessed": "2 April 2016",
+      "published": "no date",
+      "year": "no date"
+    }, "8": {
+      "initials": "",
+      "lastName": "Google, Inc.",
+      "title": "Introduction - material design - Google design guidelines",
+      "url": "http://www.google.com/design/spec/material-design/introduction.html",
+      "accessed": "2 April 2016",
+      "published": "no date",
+      "year": 2014
+    }
+  }, "book": {
+    "3": {
+      "initials": "D.",
+      "lastName": "Bell",
+      "year": 2005,
+      "title": "Software Engineering for Students: A Programming Approach.",
+      "edition": "4th",
+      "publisher": "Addison-Wesley Educational Publishers",
+      "location": "New York" 
+    }, "4": {
+      "initials": "A.M.",
+      "lastName": "St Laurent",
+      "year": 2004,
+      "title": "Understanding open source and free software licensing.",
+      "edition": "1st",
+      "publisher": "O’Reilly Media",
+      "location": "United States" 
+    }
+  }
+}

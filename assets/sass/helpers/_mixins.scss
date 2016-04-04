@@ -1,0 +1,195 @@
+/* ==========================================================================
+ *
+   Mixins
+   ========================================================================== */
+
+/*
+ * Mixin for easy media queries
+ * @include bp(tablet) { SCSS here };
+*/
+@mixin bp($point) {
+  @if $point == biggie {
+          @media (max-width : 1600px) { @content; }
+  }
+  @if $point == tablet {
+          @media (max-width : 1024px) { @content; }
+  }
+  @else if $point == phone {
+          @media (max-width : 768px) { @content; }
+  }
+}
+
+/*
+ * Mixin for clearfix
+ * @include clearfix;
+*/
+@mixin clearfix {
+  &:before,
+  &:after {
+      content: " "; /* 1 */
+      display: table; /* 2 */
+  }
+
+  &:after {
+      clear: both;
+  }
+}
+
+/*
+ * Mixin for basic CSS triangles
+ * @include triangle(up, #000, 50px)
+*/
+@mixin triangle($direction:up, $color:#000, $size:100px) {
+  @if($direction == up) {
+    border-color: transparent transparent $color;
+    border-style: solid;
+    border-width: 0 $size $size;
+    height: 0;
+    width: 0;
+  }
+  @if($direction == down) {
+    border-color: $color transparent transparent transparent;
+    border-style: solid;
+    border-width: $size;
+    height:0;
+    width:0;
+  }
+  @if($direction == left) {
+    border-color: transparent $color transparent transparent;
+    border-style: solid;
+    border-width: $size $size $size 0;
+    height: 0;
+    width: 0;
+  }
+  @if($direction == right) {
+    border-color: transparent transparent transparent $color;
+    border-style: solid;
+    border-width: $size 0 $size $size;
+    height:0;
+    width:0;
+  }
+}
+
+/*
+ * @font-face mixin
+ * Bulletproof font-face via Font Squirrel
+ * @include fontface('family', 'assets/fonts/', 'myfontname');
+ */
+
+@mixin fontface($font-family, $font-url, $font-name) {
+  @font-face {
+    font: {
+      family: $font-family;
+      style: normal;
+      weight: normal;
+    }
+    src: url($font-url + '/' + $font-name + '.eot');
+    src: url($font-url + '/' + $font-name + '.eot#iefix') format('embedded-opentype'),
+         url($font-url + '/' + $font-name + '.woff2') format('woff2'),
+         url($font-url + '/' + $font-name + '.woff') format('woff'),
+         url($font-url + '/' + $font-name + '.ttf')  format('truetype'),
+         url($font-url + '/' + $font-name + '.svg#' + $font-family) format('svg');
+  }
+}
+
+/*
+ * @font-family mixin
+ * Easily define a default stack and variations of it
+ * @include fontfamily('family', 'assets/fonts/', 'myfontname');
+ */
+
+@mixin font-family($primaryFont:Montserrat) {
+  $defaultStack: Helvetica, Arial, sans-serif;
+  $defaultWeight: 400;
+  @if ($primaryFont == 'montserrat-bold') {
+    $defaultStack: montserrat + ', ' + $defaultStack;
+    $defaultWeight: 700;
+  } @else {
+    $defaultStack: $primaryFont + ', ' + $defaultStack;
+  }
+  font-family: $defaultStack;
+  font-weight: $defaultWeight;
+}
+
+/*
+ * @iconfont mixin
+ * Include icon fonts easily
+ * @include iconfont('family', 'font-size', pseudo(t/f));
+ */
+
+@mixin iconfont($font-family, $font-size, $pseudo:'after') {
+  $noUnit: $font-size / ($font-size * 0 + 1);
+  font-size: ($noUnit * 10) + px;
+  font-size: $noUnit + rem;
+  @mixin content {
+    content: attr(data-icon);
+    font: {
+      family: $font-family;
+      size: ($noUnit * 10 * 2.54) + px;
+      size: $noUnit * 2.54 + rem;
+      weight: normal;
+    }
+    display: inline-block;
+    position: relative;
+    top: $noUnit * 2.54 + px;
+  }
+  @if($pseudo == 'before') {
+    &:before {
+      @include content;
+      margin-right: 5px;
+    }
+  } @elseif ($pseudo == 'after') {
+    &:after {
+      @include content;
+      margin-left: 5px;
+    }
+  }
+}
+
+/*
+ * @vendor mixin
+ * For including all CSS3 prefixes
+ * @include vendor($property, $value);
+ */
+
+@mixin vendor($property, $value){
+	-webkit-#{$property}:$value;
+	-moz-#{$property}:$value;
+	#{$property}:$value;
+}
+
+/*
+ * @keyframes mixin
+ * For quick and easy CSS3 Keyframe Animations
+ */
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+/*
+ * linear-gradient mixin
+ * Quick way to implement linear gradients. Inputs: $top: the color of the top of the gradient; $bottom: the color of the bottom. Simples!
+ */
+
+@mixin linearGradient($top, $bottom){
+  background: mix($top, $bottom); /* Old browsers  - finds the average of the two colours */
+  background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}

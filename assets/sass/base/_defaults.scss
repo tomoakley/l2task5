@@ -1,0 +1,60 @@
+img {
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+blockquote {
+  margin: 0 1.5em;
+}
+
+address {
+  margin: 0 0 1.5em;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440
+audio,
+canvas,
+img,
+video {
+  vertical-align: middle;
+}
+
+svg {
+  fill: currentColor;
+  vertical-align: baseline;
+}
+
+/* ==========================================================================
+   Layout/Display helper classes
+   ========================================================================== */
+
+.display-block {
+  display: block;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* ===========================================================================
+ * Clearfix
+ * =========================================================================== */
+.clearfix:after {
+  content:"";
+  display:block;
+  clear:both;
+}
+

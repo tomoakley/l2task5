@@ -1,0 +1,23 @@
+html {
+  font-size: 62.5% !important; // this is so that the 1 rem (font size) is equal to 10px, hence 1.6rem = 16px i.e easy conversion. May be an accesibility issue however
+}
+
+body {
+  font-size: 1.6rem !important;
+  font-family: proxima-nova, helvetica, sans-serif !important; // jQuery Mobile adds font rules, need an important to override #annoying
+  font-weight: 400;
+}
+
+@include fontface(patagonia, "assets/fonts/", patagonia);
+
+h1, .alpha,
+h2, .beta,
+h3, .gamma {
+  font-family: adelle, Georgia, Times, serif;
+}
+
+h1, .alpha {
+}
+
+h2, .beta {
+}
