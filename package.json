@@ -1,0 +1,29 @@
+{
+  "name": "l2task5",
+  "version": "1.0.0",
+  "description": "Level 2 Task 5 repository",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomoakley/l2task5.git"
+  },
+  "author": "Tom Oakley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomoakley/l2task5/issues"
+  },
+  "homepage": "https://github.com/tomoakley/l2task5#readme",
+  "devDependencies": {
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "gulp": "^3.9.1",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.2.0",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}
