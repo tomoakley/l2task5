@@ -3,6 +3,7 @@ var sass = require('gulp-sass');
 var notify = require('gulp-notify');
 var sourcemaps = require('gulp-sourcemaps');
 var nano = require('gulp-cssnano');
+var shell = require('gulp-shell');
 
 var onError = function(error) {
   notify.onError({
@@ -15,7 +16,7 @@ var onError = function(error) {
 }
 
 gulp.task('styles', function () {
-  return gulp.src('./assets/sass/style.scss')
+  return gulp.src('./assets/styles/src/style.scss')
   .pipe(sourcemaps.init())
   .pipe(sass({
     errLogToConsole: true,
@@ -24,11 +25,15 @@ gulp.task('styles', function () {
   }).on('error', onError))
   .pipe(nano())
   .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest('./'))
+  .pipe(gulp.dest('./assets/styles/build'))
 });
 
 gulp.task('watch', function() {
-    gulp.watch('assets/sass/**/*.scss', ['styles']);
+    gulp.watch('assets/styles/src/**/*.scss', ['styles']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('server', shell.task([
+  'node server.js'
+]));
+
+gulp.task('default', ['watch', 'server']);

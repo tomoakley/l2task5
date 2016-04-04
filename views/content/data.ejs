@@ -1,0 +1,33 @@
+<div class="content l-constrained">
+  <p>The data my app generates or uses is situated on two databases; an SQLLite database which is built into the Android app and the MySQL database on the server.</p>
+  <p>The MySQL database currently has two tables - favouritePlaques and Users. In the future, I will have a visitedPlaques table (same structure as favouritePlaques) and a table for routes/collections. This will work by giving each Plaque in the same collection a collection_id and then a collections table will define the name and other details of that route, and the Primary Key will be a foreign key to the collection_id.</p>
+  <ul class="media-list">
+    <li>
+      <img src="assets/images/data/user-data.png" alt="PlaqueIt Users Table" class="media-img" />
+      <p class="media-content">Right now there's only 1 user, because only I have registered. In the future this table will probably have a lot more fields, including password and gender).</p>
+    </li>
+    <li>
+      <img src="assets/images/data/favourite-data.png" alt="PlaqueIt Favourite Plaques Table" class="media-img" />
+      <p class="media-content">This is the table for which plaques have been favourited by which users. Right now they're all by me, because I'm the only user (!). As I said on the <a href="server-side.html">Server Side</a> page, a Unique Key exists between the plaque_id and the user_id to ensure that the combination of those two is unique before being inserted.</p>
+    </li>
+    <li>
+      <img src="assets/images/data/plaque-data.png" alt="PlaqueIt Plaques Table" class="media-img" />
+      <p class="media-content">This is the SQLLite database, which holds 2609 rows of plaque data, sourced from two JSON files (read more in the <a href="technical-report.html">Technical Report</a>). I need to add a few fields to this - a points column, for each plaque and a collection_id column. Also, there is an area column (currently they all show London), which could be deleted - however, if I decided to add other locations into PlaqueIt then I may need that column so may keep it in.</p>
+    </li>
+  </ul>
+  <p class="media-content">I have also developed 3 data models to support the development; an Entity Relationship model, based on the notation developed by Peter Chen in 1976 <small class="citation" data-ref-type="website" data-ref-id="5"></small>. I developed a UML database diagram, based on the documentation by Geoffrey Sparks <small class="citation" data-ref-type="website" data-ref-id="6"></small>. Lastly, I did a Use Case Diagram which is based on the documentation by Rus Heywood <small class="citation" data-ref-type="website" data-ref-id="7"></small>. Below are these 3 diagrams:</p>
+  <ul class="media-list">
+    <li>
+      <img src="assets/images/models/use-case-model.png" alt="PlaqueIt Use Case Model" class="media-img" />
+      <p class="media-content"></p>
+    </li>
+    <li>
+      <img src="assets/images/models/database-model.png" alt="PlaqueIt Database Model" class="media-img" />
+      <p class="media-content"></p>
+    </li>
+    <li>
+      <img src="assets/images/models/er-model.png" alt="PlaqueIt Entity Relationship Model" class="media-img" />
+      <p class="media-content"></p>
+    </li>
+  </ul>
+</div>

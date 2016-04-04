@@ -1,0 +1,36 @@
+<div class="content l-constrained">
+  <p>PlaqueIt is an app designed around <a href="http://www.english-heritage.org.uk/visit/blue-plaques/">Blue Plaques</a>. The user can get directions to a plaque they want to visit and will gain points (the more significant the plaque, or the person, the more points they get) for visiting it. They can favourite plaques for later, and in the future, will be able to create collections of plaques which go together and share them with other users. Below is a list of currently developed screens:</p>
+  <ul class="media-list">
+    <li>
+      <img src="assets/images/app/dashboard.png" alt="PlaqueIt Dashboard" class="media-image" />
+      <p class="media-content">It lists the nearest to you in a list view of cards, which is the main dashboard screen for the app. Each card shows a thumbnail of the plaque, the title (usually the subject of the plaque) and a description (the inscription on the plaque).</p>
+    </li>
+    <li>
+      <img src="assets/images/app/map.png" alt="PlaqueIt Map View" class="media-image" />
+      <p class="media-content">The user can view the same Plaques in a Google Map, by swiping to the left on the list. In Android this is called a Tab View; I used this because the point of a Tab View is either to show the same information in a different way or to show different but related information.</p>
+    </li>
+    <li>
+      <img src="assets/images/app/plaque.png" alt="PlaqueIt Plaque page" class="media-image" />
+      <p class="media-content">The user can tap on a plaque to switch to a page showing more details about that plaque, including a map which shows the location. From here, the user can also favourite the plaque (by tapping on the heart), as a way of saving it for later. The heart will appear filled-in, with a darker grey, if it is favourited. The grey section at the top of the page will be an image, but I was unable to find a suitable image big enough to show here - the thumbnails for each card item were far too small. I am planning to add a Wikipedia extract about the subject and a list of Related Plaques (with the same subject, similar area, etc).</p>
+    </li>
+    <li>
+      <img src="assets/images/app/user.png" alt="PlaqueIt User page" class="media-image" />
+      <p class="media-content">The user can view their profile page by clicking on the Profile icon on the top-right of the Dashboard (on the blue app bar). Currently, the user profile shows a welcome message (this data is retrieved from the server - more about that in the <a href="technical-report.html">Technical Report</a>) and the list of favourites / visited plaques, with the most recent at the top. If the profile icon is tapped and the user is not logged in, or the app is started for the first time, a Login / Register page is also shown. At the top of the page is an Unlock icon - this will be for logging the user out.</p>
+    </li>
+  </ul>
+  <p>Below I have included some screenshots of some of the Java code I wrote in Android Studio for PlaqueIt, and some explanations behind what it does:</p>
+  <ul class="media-list">
+    <li>
+      <img src="assets/images/code/dashboard-adapter.png" alt="PlaqueIt Dashboard Adapter" class="media-image" />
+      <p class="media-content">This is the dashboard adapter; it handles the switching of the tabs between the List and Map views. In the constructor, an ArrayList of Plaque objects is passed in, which is then set to a variable for use in the class. This is then put into a bundle in the switch statement, which controls which tab is shown and what the content of that tab is. This bundle is then sent as an argument to the fragment being used (list and map). These two fragments can take any ArrayList of plaques and show them in their interface - this means that only one of these things has to be created, rather than being created seperately for each instance (for example, the Plaque List on the dashboard is exactly the same implementation as on the User profile page listing the favourites, except different data is being given to it).</p>
+    </li>
+    <li>
+      <img src="assets/images/code/plaque-object.png" alt="PlaqueIt Plaque Object" class="media-image" />
+      <p class="media-content">This is the Plaque object - a constructor assigns the parameters to the class variables, and then there is a method called <code>getPlaqueById</code> which takes 1 ID and creates a plaque object out of it - unfortunatley the <code>new Plaque</code> statement is just out of view but it essentially takes the parameters in the <code>try</code> statement. This is getting the data from the SQLLite database (more in the <a href="technical-report.html">Technical Report</a>).</p>
+    </li>
+    <li>
+      <img src="assets/images/code/plaque-recycler.png" alt="PlaqueIt Plaque Recycler" class="media-image" />
+      <p class="media-content">This is a part of the Plaque Recycler class (it extends <code>RecyclerView.ViewHolder</code>). This particular method assigns values to the card items (the title, the description, the thumbnail, etc). For the thumbnail, it is using a Library by <a href="http://squareup.com">Square</a> called <a href="http://square.github.io/picasso/">Picasso</a> which makes it super simple to download images from the internet and assign them to an ImageView. There is also a leftover debugging statement when I was testing the thumbnail implementation.</p>
+    </li>
+  </ul>
+</div>
