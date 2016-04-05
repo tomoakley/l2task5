@@ -1,0 +1,25 @@
+.ui-page-theme-a a:link,
+.ui-page-theme-a a:visited {
+  color: $primaryBlue;
+  text-decoration: none;
+  font-weight: 400;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.ui-link[data-rel=popup] {
+  display: inline-block;
+  background: $primaryBlue;
+  color: white !important; // arrrrghhhhh jQuery Mobile
+  text-shadow: none;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: solid thin $primaryBlue;
+  transition: all 0.2s ease;
+  &:hover {
+    background: white;
+    color: $primaryBlue !important;
+  }
+}

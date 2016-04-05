@@ -21,18 +21,27 @@
       text-align: center;
       padding-top: 5px;
       border-top: solid 5px transparent;
-      transition: border-color 0.2s ease;
+      transition: all 0.2s ease;
       &:hover {
         border-color: white;
+        margin-top: -5px;
       }
     }
     a {
-      color: white;
+      display: block;
       text-decoration: none;
       font-family: patagonia, proxima-nova, Helvetica, sans-serif;
       font-size: 24px;
       font-size: 2.4rem;
       transition: all 0.2s ease;
+      &:link,
+      &:visited {
+        color: white;
+        font-weight: 400;
+        &:hover {
+          text-decoration: none;
+        }
+      } // jQuery Mobile ludicrously overwrites this so have to make it more specific
     }
   }
 }

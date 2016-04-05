@@ -5,3 +5,12 @@
 .float-right {
   float: right;
 }
+
+.ui-popup-screen {
+  background: #000; // opacity has already been added by jQuery Mobile
+}
+
+.ui-popup-container {
+  border: solid 25px white;
+  border-radius: 10px;
+}

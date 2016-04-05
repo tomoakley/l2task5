@@ -1,5 +1,5 @@
 jQuery(document).on("ready", function() {
-  $.getJSON("references.json", function(data) {
+  $.getJSON("./assets/js/references.json", function(data) {
     $(".citation").each(function() {
       var type = $(this).attr("data-ref-type");
       var id = $(this).attr("data-ref-id");

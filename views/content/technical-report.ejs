@@ -18,11 +18,11 @@
   <h2 class="beta">Connecting to the server from Android</h2>
   <p>To connect to the server, I used <a href="http://squareup.com">Square</a>'s library called <a href="http://square.github.io/okhttp/">OkHttp</a>, which makes it very easy to do asynchronous requests to a server. Android won't allow synchronous requests on the main UI thread because if it fails to return it will freeze and crash the app, which is obviously bad for users. Instead, Android encourages Asynchronous requests, which means that the method containing the request returns before the data from the request is returned.</p>
   <p>I have added two links below to images which will show in a jQuery Mobile popup, which demonstrate the code I have used to connect to the server using OkHttp.</p>
-  <a href="#getRequest" data-rel="popup">Building the request</a>
+  <a href="#getRequest" data-rel="popup" data-transition="flow">Building the request</a>
   <div data-role="popup" id="getRequest">
     <img src="assets/images/code/getRequest-android.png" alt="getRequest method for connecting to the server" class="float-left" />
   </div>
-  <a href="#asyncCallback" data-rel="popup">Asynchronous Callback</a>
+  <a href="#asyncCallback" data-rel="popup" data-transition="flow">Asynchronous Callback</a>
   <div data-role="popup" id="asyncCallback">
     <img src="assets/images/code/async-callback.png" alt="Asynchronous Callback function using OkHttp" class="float-right" />
   </div>
