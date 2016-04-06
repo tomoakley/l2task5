@@ -16,7 +16,9 @@
 }
 
 .image-grid {
-  display: flex;
+  @media screen and (min-width: $headerBreakpoint) {
+    display: flex;
+  }
   .image-container {
     flex: 1;
   }

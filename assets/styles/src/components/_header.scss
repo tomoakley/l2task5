@@ -3,29 +3,37 @@
   padding: 20px 0;
   background: #2196F3; // fallback if browser doesn't support gradients #updateYourBrowser
   background-image: radial-gradient(49% 50%, #2196F3 49%, #1976D2 100%);
-  > .l-constrained {
-    display: flex;
+  @media screen and (min-width: $headerBreakpoint) {
+    > .l-constrained {
+      display: flex;
+    }
   }
   .site-logo {
     margin: 0;
     flex: 1;
   }
   .site-navigation {
-    margin: 10px 0 0 10%;
+    margin: 10px 0 0;
     padding: 0;
     list-style: none;
-    display: flex;
     flex: 3;
+    @media screen and (min-width: $navBreakpoint) {
+      display: flex;
+    }
+    @media screen and (min-width: $headerBreakpoint) {
+      margin-left: 10%;
+    }
     li {
       flex: 1;
       text-align: center;
       padding-top: 5px;
       border-top: solid 5px transparent;
       transition: all 0.2s ease;
-      &:hover,
-      &.is-active {
-        border-color: white;
-        margin-top: -5px;
+      @media screen and (min-width: $headerBreakpoint) {
+        &:hover {
+          border-color: white;
+          margin-top: -5px;
+        }
       }
     }
     a {

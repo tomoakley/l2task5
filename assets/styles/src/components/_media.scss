@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-flow: wrap;
-  li {
-    flex: 1 0 45%;
-    &:nth-child(2n) {
-      margin-left: 5%;
+  @media screen and (min-width: $headerBreakpoint) {
+    display: flex;
+    flex-flow: wrap;
+    li {
+      flex: 1 0 45%;
+      &:nth-child(2n) {
+        margin-left: 5%;
+      }
     }
   }
 }
