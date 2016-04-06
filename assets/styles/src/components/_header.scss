@@ -22,7 +22,8 @@
       padding-top: 5px;
       border-top: solid 5px transparent;
       transition: all 0.2s ease;
-      &:hover {
+      &:hover,
+      &.is-active {
         border-color: white;
         margin-top: -5px;
       }

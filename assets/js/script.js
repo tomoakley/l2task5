@@ -1,4 +1,4 @@
-jQuery(document).on("ready", function() {
+$(function() {
   var idList = new Array();
   var duplicate;
   $.getJSON("./assets/js/references.json", function(data) {
@@ -18,6 +18,10 @@ jQuery(document).on("ready", function() {
         $(".ref-list").append("<li data-ref-id=" + id + ">" + reference + "</li>");
       }
     });
+
+    if (idList.length == 0) {
+      $(".references").remove();
+    } // remove the references element - otherwise a header appears with no references and looks stupid
 
     // this section is for the appendix page - get all the references, regardless of ID and list them
     var types = ["website", "book", "journal"];
