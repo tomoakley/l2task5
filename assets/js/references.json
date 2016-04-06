@@ -1,72 +1,351 @@
 {
   "website": {
     "1": {
-      "initials": "",
-      "lastName": "Electronic Frontier Foundation",
+      "authors": [{
+        "surname": "Electronic Frontier Foundation"
+      }],
       "title": "Oracle vs. Google",
       "url": "https://www.eff.org/cases/oracle-v-google",
-      "accessed": "1 April 2016",
-      "published": "9 October 2015",
-      "year": 2015
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 1
+      },
+      "published": {
+        "year": 2015,
+        "month": "October",
+        "date": 9
+      }
     },
     "2": {
-      "initials": "",
-      "lastName": "Google, Inc.",
+      "authors": [{
+        "surname": "Google, Inc."
+      }],
       "title": "Android Activities",
       "url": "https://developer.android.com/guide/components/activities.html",
-      "accessed": "1 April 2016",
-      "published": "",
-      "year": "no date"
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 1
+      },
+      "published": {
+        "year": "no date"
+      } 
     }, "5": {
-      "initials": "P.",
-      "lastName": "Dybka",
+      "authors": [{
+        "initials": "P.",
+        "surname": "Dybka"
+      }],
       "title": "ERD Notations in data modeling. Part 2 – Chen notation",
       "url": "http://www.vertabelo.com/blog/technical-articles/chen-erd-notation",
-      "accessed": "2 April 2016",
-      "published": "2 August 2014",
-      "year": 2014
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 2
+      },
+      "published": {
+        "year": 2014,
+        "month": "August",
+        "date": 2
+      }
     }, "6": {
-      "initials": "G.",
-      "lastName": "Sparks",
+      "authors": [{
+        "initials": "G.",
+        "surname": "Sparks"
+      }],
       "title": "Database modeling in UML (unified modeling language)",
       "url": "http://www.methodsandtools.com/archive/archive.php?id=9",
-      "accessed": "2 April 2016",
-      "published": "",
-      "year": 1995
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 2
+      },
+      "published": {
+        "year": 1995
+      }
     }, "7": {
-      "initials": "R.",
-      "lastName": "Heywood",
+      "authors": [{
+        "initials": "R. ",
+        "surname": "Heywood"
+      }],
       "title": "UML use case diagrams: tips",
       "url": "http://www.andrew.cmu.edu/course/90-754/umlucdfaq.html",
-      "accessed": "2 April 2016",
-      "published": "no date",
-      "year": "no date"
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 2
+      },
+      "published": {
+        "year": "no date"
+      }
     }, "8": {
-      "initials": "",
-      "lastName": "Google, Inc.",
+      "authors": [{
+        "surname": "Google, Inc."
+      }],
       "title": "Introduction - material design - Google design guidelines",
       "url": "http://www.google.com/design/spec/material-design/introduction.html",
-      "accessed": "2 April 2016",
-      "published": "no date",
-      "year": 2014
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 2
+      },
+      "published": {
+        "year": "2014"
+      } 
+    }, "9": {
+      "authors": [{
+        "initials": "M. ",
+        "surname": "Chapple"
+      }],
+      "title": "Introduction to NoSQL building databases to support big data",
+      "url": "http://databases.about.com/od/otherdatabases/a/Introduction-To-Nosql.htm",
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 4
+      },
+      "published": {
+        "year": "2016a"
+      }
+    }, "10": {
+      "authors": [{
+        "initials": "M. ",
+        "surname": "Chapple"
+      }],
+      "title": "The ACID model",
+      "url": "http://databases.about.com/od/specificproducts/a/acid.htm",
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 4
+      },
+      "published": {
+        "year": "2016b"
+      }
+    }, "11": {
+      "authors": [{
+        "initials": "M. ",
+        "surname": "Chapple"
+      }],
+      "title": "Abandoning ACID in favor of BASE changes to the long-held relational model",
+      "url": "http://databases.about.com/od/otherdatabases/a/Abandoning-Acid-In-Favor-Of-Base.htm",
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 4
+      },
+      "published": {
+        "year": "2016c"
+      }
+    }, "12": {
+      "authors": [{
+        "initials": "D. ",
+        "surname": "Harris"
+      }],
+      "title": "Facebook trapped in MySQL 'fate worse than death'",
+      "url": "https://gigaom.com/2011/07/07/facebook-trapped-in-mysql-fate-worse-than-death/",
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 3
+      },
+      "published": {
+        "year": 2011,
+        "month": "July",
+        "date": 7
+      }
+    }, "16": {
+      "authors": [{
+        "surname": "DB-Engines"
+      }],
+      "title": "DB-Engines ranking - popularity ranking of database management systems",
+      "url": "http://db-engines.com/en/ranking",
+      "published": {
+        "year": 2016,
+        "month": "April"
+      },
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 3
+      }
+    }, "17": {
+      "authors": [{
+        "initials": "G. ",
+        "surname": "Kumar"
+      }],
+      "title": "Exploring the different types of NoSQL databases part ii",
+      "url": "http://www.3pillarglobal.com/insights/exploring-the-different-types-of-nosql-databases",
+      "published": {
+        "year": 2013,
+        "month": "October",
+        "date": 7
+      },
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 3
+      }
+    }, "18": {
+      "authors": [{
+        "surname": "neo4j"
+      }],
+      "title": "Graph databases vs. Other NoSQL databases: A comparison",
+      "url": "http://neo4j.com/developer/graph-db-vs-nosql/#_neo4j_as_a_nosql_database",
+      "published": {
+        "year": 2016
+      },
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 3
+      }
+    }, "19": {
+      "authors": [{
+        "surname": "MongoDB"
+      }],
+      "title": "MongoDB architecture guide (white paper)",
+      "url": "http://s3.amazonaws.com/info-mongodb-com/MongoDB_Architecture_Guide.pdf",
+      "published": {
+        "year": "no date"
+      },
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 3
+      }
+    }, "20": {
+      "authors": [{
+        "initials": "L. ",
+        "surname": "Voss"
+      }],
+      "title": "In defence of SQL",
+      "url": "http://seldo.com/weblog/2010/07/12/in_defence_of_sql",
+      "published": {
+        "year": 2010,
+        "month": "July",
+        "date": 12
+      },
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 3
+      }
+    }, "21": {
+      "authors": [{
+        "surname": "Digital Ocean"
+      }],
+      "title": "A comparison of NoSQL database management systems and models",
+      "url": "https://www.digitalocean.com/community/tutorials/a-comparison-of-nosql-database-management-systems-and-models",
+      "published": {
+        "year": 2014
+      },
+      "accessed": {
+        "year": 2016,
+        "month": "April",
+        "date": 3
+      }
     }
   }, "book": {
     "3": {
-      "initials": "D.",
-      "lastName": "Bell",
-      "year": 2005,
-      "title": "Software Engineering for Students: A Programming Approach.",
+      "authors": [{
+        "initials": "D.",
+        "surname": "Bell"
+      }],
+      "published": {
+        "year": 2005
+      },
+      "title": "Software Engineering for Students: A Programming Approach",
       "edition": "4th",
       "publisher": "Addison-Wesley Educational Publishers",
       "location": "New York" 
     }, "4": {
-      "initials": "A.M.",
-      "lastName": "St Laurent",
-      "year": 2004,
-      "title": "Understanding open source and free software licensing.",
+      "authors": [{
+        "initials": "A.M.",
+        "surname": "St Laurent"
+      }],
+      "published": {
+        "year": 2004
+      },
+      "title": "Understanding open source and free software licensing",
       "edition": "1st",
       "publisher": "O’Reilly Media",
       "location": "United States" 
+    }, "22": {
+      "authors": [{
+        "initials": "J. ",
+        "surname": "Webber"
+      }, {
+        "initials": "I. ",
+        "surname": "Robinson"
+      }, {
+        "initials": "E. ",
+        "surname": "Elfrem"
+      }],
+      "published": {
+        "year": 2015,
+        "month": "July",
+        "date": 3
+      },
+      "title": "Graph Databases: New Opportunities for Connected Data",
+      "edition": "1st",
+      "publisher": "O’Reilly Media, Inc, USA",
+      "location": "United States"
     }
+  }, "journal": {
+    "13": {
+      "authors": [{
+        "initials": "N. ",
+        "surname": "Leavitt"
+      }],
+      "title": "Will NoSQL databases live up to their promise?",
+      "journal": "Computer",
+      "published": {
+        "year": 2010,
+        "month": "February"
+      },
+      "volume": 43,
+      "issue": 2,
+      "pageRange": "12-14",
+      "doi": "10.1109/mc.2010.58"
+    }, "14": {
+      "authors": [{
+        "initials": "R. ",
+        "surname": "Cattell"
+      }],
+      "title": "Scalable SQL and NoSQL data stores",
+      "journal": "ACM SIGMOD Record",
+      "published": {
+        "year": 2010,
+        "month": "May",
+        "date": 6
+      },
+      "volume": 39,
+      "issue": 4,
+      "pageRange": "12",
+      "doi": "10.1145/1978915.1978919"
+    }, "15": {
+      "authors": [
+        {
+          "surname": "Mohamed",
+          "initials": "M.A."
+        }, {
+          "surname": "Altrafi",
+          "initials": "O.G."
+        }, {
+          "surname": "Ismail",
+          "initials": "M.O."
+        }
+      ],
+      "title": "Relational vs. NoSQL databases: A survey",
+      "journal": "International Journal of Computer and Information Technology",
+      "published": {
+        "year": 2014,
+        "month": "May"
+      },
+      "volume": 3,
+      "issue": 3,
+      "pageRange": "598-601"
+    } 
   }
 }
